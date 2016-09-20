@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		table {
+			border-collapse: collapse;
+		}
+		td {
+			border: 1px solid #ccc;
+			padding: 5px 10px;
+		}
+		
+		/* 表头固定--------------------------------------------- */
+		.fht-table-wrapper,
+		.fht-table-wrapper .fht-thead,
+		.fht-table-wrapper .fht-tfoot,
+		.fht-table-wrapper .fht-fixed-column .fht-tbody,
+		.fht-table-wrapper .fht-fixed-body .fht-tbody,
+		.fht-table-wrapper .fht-tbody {
+			overflow: hidden;
+			position: relative;
+		}
+		.fht-table-wrapper .fht-fixed-body .fht-tbody,
+		.fht-table-wrapper .fht-tbody {
+	    overflow: auto;
+		}
+		.fht-table-wrapper .fht-table .fht-cell {
+			overflow: hidden;
+	    height: 1px;
+		}
+		.fht-table-wrapper .fht-fixed-column,
+		.fht-table-wrapper .fht-fixed-body {
+	    top: 0;
+	    left: 0;
+	    position: absolute;
+	   } 
+		.fht-table-wrapper .fht-fixed-column {
+		  z-index: 1;
+		}
+			/* 附加 */
+			/* 设置table宽 */
+		.table-box {
+			width: 300px;
+		}
+			/* 设置table 的 tbody 高 */
+		.fht-tbody {
+			height: 300px;
+		}
+		/* @end */
+	</style>
+	<!-- <link rel="stylesheet" type="text/css" href="css/defaultTheme.css"> -->
+	<script type="text/javascript" src="demo/js/jquery.js"></script>
+	<script type="text/javascript" src="jquery.fixedheadertable.js"></script>
+	<script type="text/javascript" src="lib/jquery.mousewheel.js"></script>
+</head>
+<body>
+	<div class="table-box">
+		<table>
+			<thead>
+				<tr>
+					<td>列数1</td>
+					<td>列数2</td>
+					<td>列数3</td>
+					<td>列数4</td>
+					<td>列数5</td>
+					<td>列数5</td>
+					<td>列数5</td>
+					<td>列数5</td>
+					<td>列数5</td>
+					<td>列数5</td>
+					<td>列数5</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>内容1</td>
+					<td>内容2</td>
+					<td>内容3</td>
+					<td>内容4</td>
+					<td>内容5</td>
+				</tr>
+				<tr>
+					<td>内容1</td>
+					<td>内容2</td>
+					<td>内容3</td>
+					<td>内容4</td>
+					<td>内容5</td>
+				</tr>
+				<tr>
+					<td>内容1</td>
+					<td>内容2</td>
+					<td>内容3</td>
+					<td>内容4</td>
+					<td>内容5</td>
+				</tr>
+				<tr>
+					<td>内容1</td>
+					<td>内容2</td>
+					<td>内容3</td>
+					<td>内容4</td>
+					<td>内容5</td>
+				</tr>
+				<tr>
+					<td>内容1</td>
+					<td>内容2</td>
+					<td>内容3</td>
+					<td>内容4</td>
+					<td>内容5</td>
+				</tr>
+				<tr>
+					<td>内容1</td>
+					<td>内容2</td>
+					<td>内容3</td>
+					<td>内容4</td>
+					<td>内容5</td>
+				</tr>
+				<tr>
+					<td>内容1</td>
+					<td>内容2</td>
+					<td>内容3</td>
+					<td>内容4</td>
+					<td>内容5</td>
+				</tr>
+				<tr>
+					<td>内容1</td>
+					<td>内容2</td>
+					<td>内容3</td>
+					<td>内容4</td>
+					<td>内容5</td>
+				</tr>
+				<tr>
+					<td>内容1</td>
+					<td>内容2</td>
+					<td>内容3</td>
+					<td>内容4</td>
+					<td>内容5</td>
+				</tr>
+				<tr>
+					<td>内容1</td>
+					<td>内容2</td>
+					<td>内容3</td>
+					<td>内容4</td>
+					<td>内容5</td>
+				</tr>
+				<tr>
+					<td>内容1</td>
+					<td>内容2</td>
+					<td>内容3</td>
+					<td>内容4</td>
+					<td>内容5</td>
+				</tr>
+				<tr>
+					<td>内容1</td>
+					<td>内容2</td>
+					<td>内容3</td>
+					<td>内容4</td>
+					<td>内容5</td>
+				</tr>
+				<tr>
+					<td>内容1</td>
+					<td>内容2</td>
+					<td>内容3</td>
+					<td>内容4</td>
+					<td>内容5</td>
+				</tr>
+				<tr>
+					<td>内容1</td>
+					<td>内容2</td>
+					<td>内容3</td>
+					<td>内容4</td>
+					<td>内容5</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('table').fixedHeaderTable();
+	})
+
+	
+</script>
+	
+</body>
+</html>
