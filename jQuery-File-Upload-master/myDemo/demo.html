@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo-FileUpload</title>
+	<style>
+		.box {
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+<div class="box" id="addFile">add file...</div>
+
+<script src="jquery.min.js"></script>
+<script src="../js/vendor/jquery.ui.widget.js"></script>
+<script src="jquery.fileupload.js"></script>
+<script>
+	$('#addFile').fileupload({
+
+	})
+	.on('fileuploadadd', function (e, data) {
+		console.log('fileuploadadd')
+	})
+	.on('fileuploadprocessalways', function (e, data) {
+
+	})
+	.on('fileuploadprogressall', function (e, data) {
+
+	})
+	.on('fileuploaddone', function (e, data) {
+
+	})
+	
+</script>
+	
+</body>
+</html>
