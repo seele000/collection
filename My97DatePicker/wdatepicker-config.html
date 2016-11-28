@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>wdatepicker</title>
+</head>
+<body>
+	<input type="text" id="inp">
+	<span id="date"></span>
+
+	<script src="assets/js/jquery-1.11.1.js"></script>
+	<script src="./assets/js/My97DatePicker/WdatePicker.js"></script>
+	<script>
+		/*
+		 * 动态变量
+		 * %y   当前年
+		 * %M   当前月
+		 * %d   当前日
+		 * %ld  本月最后一天
+		 * %H   当前时
+		 * %m   当前分
+		 * %s   当前秒
+		 * #{}  运算表达式,如:#{%d+1}:表示明天
+		 * #F{} {}之间是函数可写自定义JS代码
+		 */
+		$('#inp').on('focus',function () {
+			WdatePicker({
+
+				//el: 'date',	// 指定一个控件或控件的ID,显示选择后的日期，控件根据它定位
+				// vel: this,	// 指定一个控件或控件的ID,存储realDateFmt和realTimeFmt的值
+				doubleCalendar: false,	// 是否显示双日历
+				position: {},			// 默认相对页面固定坐标{left:100,top:50}
+				dateFmt: 'yyyy-MM-dd',	// 日期格式,根据格式判断显示年月日
+				realDateFmt: 'yyyy-MM-dd',
+				realTimeFmt: 'HH:mm:ss',
+				realFullFmt: '%Date %Time', 	// 建议使用默认
+				minDate: '1900-01-01 00:00:00',	// 与real日期匹配
+				maxDate: '2099-12-31 23:59:59',	// 与real日期匹配
+				startDate: '',			// 点击日期框显示的起始日期，''为今天
+				firstDayOfWeek: 0,		// 周的第一天 0表示星期日 1表示星期一
+				highLineWeekDay: true,	// 是否高亮周六、日
+				isShowWeek: false,		// 是否显示本周是今年的第几周
+				isShowClear: true,		// 是否显示清空按钮
+				isShowOK: true,			// 是否显示确定按钮
+				isShowToday:true,		// 是否显示今天按钮
+				isShowOthers:true,		// 是否显示填充上月和下月余日
+				readOnly: false,		// 是否只读
+				qsEnabled: true,		// 是否启用快速选择功能,无d时永为true
+				autoShowQS: false,		// 是否默认显示快速选择
+				quickSel: null,			// 快速选择指定日期(5个) ['2000-1-10','2000-2-20']
+				disabledDays: null,		// 禁用 0-6(周日-周六) [6]
+				disabledDates: null,	// 禁用日期
+				opposite: false,		// true: 无效日期变成有效日期 
+				specialDates: null,		// 特殊日期高亮['03','06']
+				specialDays: null,		// 特殊列高亮0至6 分别代表 周日至周六[1]
+				onpicking: function () {
+					console.log('onpicking');	// 选择时触发
+				},
+				onpicked: function () {
+					console.log('onpicked');	// 同上
+				},
+				onclearing: function () {
+					console.log('onclearing');	// 点击清除按钮时触发
+				},
+				oncleared: function () {
+					console.log('oncleared');	// 同上
+				},
+				ychanging: function () {
+					console.log('ychanging');  	// changing 事件发生在属性改变之前
+				},
+				ychanged: function () {
+					console.log('ychanging');	// changed 事件发生在属性改变之后
+				},
+				// Mchanging Mchanged
+				// dchanging dchanged
+				// Hchanging Hchanged
+				// mchanging mchanged
+				// schanging schanged
+
+
+				// →.→
+				autoUpdateOnChanged: null,	// 将选择日期显示在el上 null | true | false
+				hmsMenuCfg: { H: [1, 6], m: [5, 6], s: [15, 4] }, // 自定义时分秒
+				weekMethod: 'ISO8601',		// 周算法规定：
+											// ISO8601:规定第一个星期四为第一周；
+											// MSExcel:1月1日所在的周
+				lang: 'auto',				// 语言:
+											// auto: 自动根据客户端浏览器的语言自动选择语言
+											// en: UTF-8
+											// zh-cn: gb2312
+											// zh-tw: GBK
+				skin: 'default',			// default | whyGreen | 自定义
+				errDealMode: 0,				// 纠错模式
+											// 0: 提示
+											// 1: 自动纠错
+											// 2: 标记
+				autoPickDate: null,			// 点击日期自动输入：
+											// null: 自动判断录入
+											// true: 点击日期返回
+											// false: 点击确定返回						
+
+				// ???????
+				enableInputMask: false,	// 文本框输入启用掩码开关
+				enableKeyboard: true,	// 键盘控制开关??tab
+
+			})
+		});
+
+	</script>
+	
+</body>
+</html>

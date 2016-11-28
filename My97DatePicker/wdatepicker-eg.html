@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>wdatepicker-eg</title>
+</head>
+<body>
+	<p> 时间限制：
+		1.后者大于前者
+		2.后者最大今天
+		3.时间区间为12个月
+		4.选择一个日期后后触发另一个
+		5.只到月份
+	</p>
+
+	<input id="inp1" class="Wdate" type="text"/> 
+	<input id="inp2" class="Wdate" type="text"/>
+
+	<script src="assets/js/jquery-1.11.1.js"></script>
+	<script src="./assets/js/My97DatePicker/WdatePicker.js"></script>
+	<script>
+
+		$('#inp1').click(function () {
+			WdatePicker({
+				dateFmt: 'yyyy-MM',
+				minDate: '#F{$dp.$D(\'inp2\',{M: -11})}',
+				maxDate: '#F{$dp.$D(\'inp2\')}',
+				onpicked: function () {
+					inp2.click();
+				},
+			})
+		});
+		$('#inp2').click(function () {
+			WdatePicker({
+				dateFmt: 'yyyy-MM',
+				minDate:'#F{$dp.$D(\'inp1\')}',
+				maxDate:'#F{$dp.$D(\'inp1\',{M:11})}' || '%y-%M',
+				onpicked: function () {
+					inp1.click();
+				},
+			})
+		});
+		
+	</script>
+</body>
+</html>
